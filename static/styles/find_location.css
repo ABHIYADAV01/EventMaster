@@ -1,0 +1,151 @@
+/* Define a modern color palette */
+:root {
+  --primary-color: #3498db; /* Blue */
+  --secondary-color: #2ecc71; /* Green */
+  --text-color: #333; /* Dark Gray */
+}
+
+/* Apply modern styling to the location container */
+.location-container {
+  font-family: "Arial", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 50px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Update the text styles */
+.location-title {
+  color: var(--primary-color);
+  font-size: 2em;
+}
+
+.location-description {
+  color: var(--text-color);
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+.location-steps-title {
+  color: var(--primary-color);
+  font-size: 1.5em;
+  margin-top: 20px;
+}
+
+/* Style the steps */
+.location-steps {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.location-step {
+  font-size: 1.2em;
+  background-color: var(--secondary-color);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 5px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.location-step:hover {
+  background-color: #27ae60; /* Darker green on hover */
+}
+
+/* Style the "Back to Home" button */
+.location-back {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.2em;
+  transition: background-color 0.3s;
+}
+
+.location-back:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+}
+
+/* Style the map section */
+.location-map-section {
+  text-align: center;
+}
+
+.location-map-title {
+  color: var(--primary-color);
+  font-size: 1.5em;
+  margin-top: 20px;
+}
+
+/* Style the map image */
+.location-map-image {
+  max-width: 60%;
+  height: auto;
+  border-radius: 5px;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.location-map-image:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transform: scale(1.1);
+}
+
+/* Responsive design */
+
+@media (max-width: 768px) {
+  .location-container {
+    flex-direction: column; /* Stack sections vertically */
+    align-items: center; /* Center align content */
+    margin: 20px; /* Adjust margin for spacing */
+  }
+
+  .location-details,
+  .location-map-section {
+    flex: 1;
+    text-align: center; /* Center align text */
+    width: 100%; /* Full width for both sections */
+    margin: 0; /* Remove margin for both sections */
+  }
+
+  .location-title,
+  .location-description,
+  .location-steps-title,
+  .location-steps,
+  .location-map-title,
+  .location-map-link,
+  .location-map-image {
+    width: 100%; /* Set width to 100% for text and images */
+    text-align: center; /* Center align text */
+  }
+
+  .location-back {
+    margin: 20px auto;
+    width: 80%;
+    text-align: center; /* Center-align text within the button */
+  }
+
+  .location-description,
+  .location-steps-title,
+  .location-steps {
+    font-size: 1em; /* Adjust font size */
+  }
+
+  .location-map-title,
+  .location-map-link,
+  .location-map-image {
+    margin-top: 10px; /* Adjust margin for spacing */
+  }
+
+  .location-map-image {
+    max-width: 80%; /* Reduce image width */
+  }
+}

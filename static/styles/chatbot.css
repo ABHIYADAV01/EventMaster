@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+/* Styling for the chatbot section */
+
+:root {
+  --purple: rgb(123, 31, 162);
+  --violet: rgb(103, 58, 183);
+  --pink: rgb(244, 143, 177);
+}
+
+@keyframes background-pan {
+  from {
+    background-position: 0% center;
+  }
+
+  to {
+    background-position: -200% center;
+  }
+}
+
+@keyframes scale {
+  from,
+  to {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+.magic-container {
+  display: grid;
+  margin: 0px;
+  overflow: hidden;
+  place-items: center;
+}
+
+.magic-title {
+  color: black;
+  font-family: "Rubik", sans-serif;
+  font-size: clamp(2em, 2vw, 4em);
+  font-weight: 400;
+  margin: 0px;
+  padding: 20px;
+  text-align: center;
+}
+
+.magic-title .magic {
+  display: inline-block;
+  position: relative;
+}
+
+.magic-title .magic .magic-star {
+  --size: clamp(20px, 1.5vw, 30px);
+
+  animation: scale 700ms ease forwards;
+  display: block;
+  height: var(--size);
+  left: var(--star-left);
+  position: absolute;
+  top: var(--star-top);
+  width: var(--size);
+}
+
+.magic-title .magic .magic-star svg {
+  animation: rotate 1000ms linear infinite;
+  display: block;
+  opacity: 0.7;
+}
+
+.magic-title .magic .magic-star svg path {
+  fill: var(--violet);
+}
+
+.magic-title .magic .magic-text {
+  animation: background-pan 3s linear infinite;
+  background: linear-gradient(
+    to right,
+    var(--purple),
+    var(--violet),
+    var(--pink),
+    var(--purple)
+  );
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
+
+.chatbot {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.chatbot-bckg {
+  background-image: url("https://assets.toptal.io/images?url=https%3A%2F%2Fbs-uploads.toptal.io%2Fblackfish-uploads%2Fcomponents%2Fblog_post_page%2Fcontent%2Fcover_image_file%2Fcover_image%2F1297499%2Fregular_1708x683_cover-chatbot-ux-design-947150b6d0e50becc21ef8c828f22acb.png");
+  opacity: 90%;
+}
+
+.chatbot-icon {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #007bff;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+/* Styling for the form */
+.chatbot form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.chatbot label {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.chatbot select {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.chatbot button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.chatbot button:hover {
+  background-color: #0069d9;
+}
+
+/* Styling for the conversation */
+.conversation {
+  margin-top: 20px;
+}
+
+.user-message,
+.bot-message {
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 16px;
+  text-align: left;
+}
+
+.user-message {
+  background-color: #f0f8ff;
+}
+
+.bot-message {
+  background-color: #e0ffe0;
+}
+
+.bot-message p:first-child {
+  margin-bottom: 5px;
+}
+
+.user-message a,
+.bot-message a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s;
+  border: 1px solid #007bff;
+  padding: 3px 5px;
+  border-radius: 3px;
+}
+
+.user-message a:hover,
+.bot-message a:hover {
+  color: #0056b3;
+  background-color: #f0f8ff; /* Adding a background color on hover */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .chatbot section {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .chatbot {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .chatbot-bckg {
+    background-size: cover;
+    opacity: 90%;
+  }
+
+  .chatbot label {
+    font-size: 16px;
+  }
+
+  .chatbot select {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .chatbot button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+
+  .user-message,
+  .bot-message {
+    font-size: 14px;
+  }
+}
